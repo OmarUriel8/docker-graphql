@@ -27,17 +27,13 @@ jobs:
         docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
         echo "Fin del login"
 
-    - name: Build Docker Image
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}      
+    - name: Build Docker Image    
       run: |
-        docker build -t ${DOCKER_USER}/docker-graphql:0.0.2 .
+        docker build -t omaru948/docker-graphql:0.0.2 .
 
-    - name: Push Docker Image
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}      
+    - name: Push Docker Image   
       run: |
-        docker push -t ${DOCKER_USER}/docker-graphql:0.0.2
+        docker push -t omaru948/docker-graphql:0.0.2
 
       
     #- name: Build the Docker image
