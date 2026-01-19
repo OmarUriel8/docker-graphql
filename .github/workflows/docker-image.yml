@@ -37,7 +37,7 @@ jobs:
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}      
       run: |
-        docker push -t ${DOCKER_USER}/docker-graphql:0.0.2 .  
+        docker push -t ${DOCKER_USER}/docker-graphql:0.0.2
 
       
     #- name: Build the Docker image
